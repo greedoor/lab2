@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Person List{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1>All Persons</h1>
+    
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+    
+    {% if persons|length > 0 %}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for person in persons %}
+                <tr>
+                    <td>{{ person.id }}</td>
+                    <td>{{ person.name }}</td>
+                    <td>{{ person.email }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p class="alert alert-info">No persons found. <a href="{{ path('person_new') }}">Add one now!</a></p>
+    {% endif %}
+    
+    <a href="{{ path('person_new') }}" class="btn btn-primary">Add New Person</a>
+</div>
+{% endblock %}

@@ -1,0 +1,6 @@
+<h1>{{ editMode ? 'Modifier' : 'Ajouter' }} une voiture</h1>
+
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button type="submit">{{ editMode ? 'Modifier' : 'Ajouter' }}</button>
+{{ form_end(form) }}

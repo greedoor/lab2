@@ -1,0 +1,11 @@
+person_new:
+    path: /person/new
+    controller: App\Controller\PersonController::new
+
+person_list:
+    path: /person/list
+    controller: App\Controller\PersonController::list
+
+controllers:
+    resource: ../src/Controller/
+    type: attribute

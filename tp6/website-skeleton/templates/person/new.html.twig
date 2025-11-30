@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Add New Person{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1>Add New Person</h1>
+    
+    {{ form_start(form) }}
+        <div class="mb-3">
+            {{ form_label(form.name) }}
+            {{ form_widget(form.name) }}
+            {{ form_errors(form.name) }}
+        </div>
+        
+        <div class="mb-3">
+            {{ form_label(form.email) }}
+            {{ form_widget(form.email) }}
+            {{ form_errors(form.email) }}
+        </div>
+        
+        <div class="mb-3">
+            {{ form_widget(form.save) }}
+        </div>
+    {{ form_end(form) }}
+    
+    <a href="{{ path('person_list') }}" class="btn btn-secondary">View All Persons</a>
+</div>
+{% endblock %}
